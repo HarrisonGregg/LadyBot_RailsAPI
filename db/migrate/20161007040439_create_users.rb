@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :insurance_company, null: false
       t.string :insurance_type, null: false
 
-      t.timestamps, null: false
+      t.timestamps
     end
   end
 end
