@@ -10,38 +10,4 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007041510) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "entries", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "facility",   null: false
-    t.string   "string",     null: false
-    t.string   "city",       null: false
-    t.string   "state",      null: false
-    t.decimal  "total_bill", null: false
-    t.decimal  "total_paid", null: false
-    t.string   "details"
-    t.boolean  "anonymous",  null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_entries_on_user_id", using: :btree
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name",              null: false
-    t.string   "email",             null: false
-    t.string   "password_digest",   null: false
-    t.string   "city",              null: false
-    t.string   "state",             null: false
-    t.string   "insurance_company", null: false
-    t.string   "insurance_type",    null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  add_foreign_key "entries", "users"
-end
