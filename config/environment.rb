@@ -5,4 +5,4 @@ require_relative 'application'
 Rails.application.initialize!
 
 
-ALCHEMY = YAML.load_file("#{Rails.root}/config/secrets.yml")
+KEYS = YAML.load_file("#{Rails.root}/config/secrets.yml")
